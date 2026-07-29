@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b5b67">
+  <title>AIDA2 自由潜学习舱</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <img src="assets/aida2-cover.png" alt="AIDA2 自由潜水手册封面">
+        <div>
+          <strong>AIDA2 学习舱</strong>
+          <span>理论复习与模拟考试</span>
+        </div>
+      </div>
+
+      <div class="overall-progress" aria-label="总体学习进度">
+        <div class="progress-copy">
+          <span>总体进度</span>
+          <strong id="overallPercent">0%</strong>
+        </div>
+        <div class="progress-track"><i id="overallBar"></i></div>
+      </div>
+
+      <nav class="main-nav" aria-label="主要导航">
+        <button class="nav-item active" data-view="dashboard">总览</button>
+        <button class="nav-item" data-view="learn">章节学习</button>
+        <button class="nav-item" data-view="exam">模拟考试</button>
+      </nav>
+
+      <div class="chapter-nav-wrap">
+        <p class="nav-label">课程章节</p>
+        <div id="chapterNav" class="chapter-nav"></div>
+      </div>
+
+      <div class="source-links">
+        <a href="AIDA2星.pdf" target="_blank">打开理论手册</a>
+        <a href="AIDA2试卷A.pdf" target="_blank">打开原始试卷</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" aria-label="打开课程导航" title="打开课程导航">☰</button>
+        <div>
+          <p class="eyebrow" id="viewEyebrow">AIDA2 · 自由潜水员</p>
+          <h1 id="viewTitle">考前学习总览</h1>
+        </div>
+        <div class="topbar-actions">
+          <label class="search-box">
+            <span class="sr-only">搜索知识点</span>
+            <span class="search-icon" aria-hidden="true">&#128269;</span>
+            <input id="searchInput" type="search" placeholder="搜索耳压、BO、装备…">
+          </label>
+          <button class="quiet-button" id="resetButton">重置进度</button>
+        </div>
+      </header>
+
+      <section id="dashboardView" class="view active"></section>
+      <section id="learnView" class="view"></section>
+      <section id="examView" class="view"></section>
+      <section id="searchView" class="view"></section>
+    </main>
+  </div>
+
+  <div class="mobile-scrim" id="mobileScrim"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
